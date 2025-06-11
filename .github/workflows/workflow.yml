@@ -1,17 +1,36 @@
 name: "Test variables"
 on: 
   push:
+  workflow_dispatch:
+    inputs:
+      entorno:
+        type: environment
+        description: "Environment to use"
+        default: "int"
 
 env:
   MY_ENV_VAR: "Hello, World! Workflow"
 
 jobs:
-  job1:
+  job1:    
     env:
        MY_ENV_VAR: "Hello, World! Job 1"
     runs-on: ubuntu-latest
+    environment: ${{inputs.entorno}}           
     steps:
-      - name: Print env var
+
+      - if: ${{ contains(inputs.entorno, 'int') }}  
+        name: Print env var
         env:
           MY_ENV_VAR: "Hello, World! Step 1"
-        run: echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
+        run: 
+            | 
+            echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
+            echo "The value of VAR_ROLE es ${{ vars.VAR_ROLE }}"
+       
+      - if: always()  
+        name: Ejecuto si fallo        
+        run: 
+            |
+            echo "This step runs if the previous step fails"
+            
