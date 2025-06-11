@@ -33,4 +33,12 @@ jobs:
         run: 
             |
             echo "This step runs if the previous step fails"
+
+      - name: "[Debug] Triggered from Main"
+        if: ${{ github.ref_name == 'main' }}
+        
+        run: echo "Triggered from main branch!"
+
+
+        
             
