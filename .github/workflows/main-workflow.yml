@@ -1,0 +1,11 @@
+name: Main Workflow
+on: 
+    workflow_dispatch: 
+jobs:
+    job1:
+      uses: ./.github/reusable-wf/workflow.yml
+      with:
+          entorno: "pre"
+
+
+
