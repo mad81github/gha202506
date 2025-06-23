@@ -3,7 +3,7 @@ on:
     workflow_dispatch: 
 jobs:
     job1:
-      uses: ./.github/reusable-wf/workflow.yml@main
+      uses: ./reusable-wf/workflow.yml
       with:
           entorno: "pre"
 
