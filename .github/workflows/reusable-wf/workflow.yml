@@ -1,11 +1,6 @@
 name: "Test variables"
 on:   
-  workflow_dispatch:
-    inputs:
-      entorno:
-        type: environment
-        description: "Environment to use"
-        default: "int"
+
   workflow_call: 
      inputs:
         entorno:
