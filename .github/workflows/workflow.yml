@@ -19,8 +19,7 @@ jobs:
     environment: ${{inputs.entorno}}           
     steps:
 
-      - if: ${{ contains(inputs.entorno, 'int') }}  
-        name: Print env var
+      - name: Print env var
         env:
           MY_ENV_VAR: "Hello, World! Step 1"
         run: 
@@ -28,16 +27,12 @@ jobs:
             echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
             echo "The value of VAR_ROLE es ${{ vars.VAR_ROLE }}"
        
-      - if: always()  
-        name: Ejecuto si fallo        
+      - name: Entorno ${{inputs.entorno}} 
         run: 
             |
-            echo "This step runs if the previous step fails"
+            echo "This step runs in entorno"
 
-      - name: "[Debug] Triggered from Main"
-        if: ${{ github.ref_name == 'main' }}
-        
-        run: echo "Triggered from main branch!"
+
         
 
             
