@@ -1,4 +1,4 @@
-name: "Test variables"
+name: "Reusable WF"
 on:   
   workflow_dispatch: 
     inputs:    
