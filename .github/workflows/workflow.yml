@@ -1,4 +1,4 @@
-name: "Test variables"
+name: "Test custom action"
 on:   
 
   workflow_dispatch:
