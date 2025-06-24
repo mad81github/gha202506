@@ -6,12 +6,6 @@ on:
             type: string
             description: "Environment to use"
             default: "int"
-  workflow_call:
-    inputs:    
-      entorno:
-          type: string
-          description: "Environment to use"
-          default: "int"
 
 env:
   MY_ENV_VAR: "Hello, World! Workflow"
@@ -23,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{inputs.entorno}}           
     steps:
+      - uses: actions/checkout@v4
 
       - name: Print env var
         env:

@@ -1,0 +1,25 @@
+name: "My custom Acton"
+description: custom action
+    
+inputs:    
+  entorno:  
+     description: "Environment to use"
+     default: "int"
+runs:
+  using: composite
+  steps:
+    - run:  | 
+            echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
+            echo "The value of VAR_ROLE es ${{ vars.VAR_ROLE }}"
+      shell: bash
+       
+    - name: Entorno ${{inputs.entorno}} 
+      shell: bash
+      run: 
+            |
+            echo "This step runs in entorno"
+
+
+        
+
+            
