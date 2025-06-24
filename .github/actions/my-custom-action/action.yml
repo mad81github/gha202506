@@ -16,7 +16,7 @@ runs:
       shell: bash
       run: 
             |
-            echo "This step runs in entorno"
+            echo "This step runs in entorno" ${{inputs.entorno}} "
 
 
         
