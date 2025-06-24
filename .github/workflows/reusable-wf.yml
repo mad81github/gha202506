@@ -1,6 +1,11 @@
-name: "Test variables"
+name: "Reusable WF"
 on:   
-
+  workflow_dispatch: 
+    inputs:    
+      entorno:
+            type: string
+            description: "Environment to use"
+            default: "int"
   workflow_call:
     inputs:    
       entorno:
