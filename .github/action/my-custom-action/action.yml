@@ -14,8 +14,7 @@ runs:
       shell: bash
       run: 
           | 
-          echo "The value of MY_ENV_VAR is $MY_ENV_VAR"
-          echo "The value of VAR_ROLE es ${{ vars.VAR_ROLE }}"
+          echo "The value of MY_ENV_VAR is $MY_ENV_VAR"       
       
     - name: Entorno ${{inputs.entorno}} 
       shell: bash
